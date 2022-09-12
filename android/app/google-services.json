@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "813148073098",
+    "project_id": "aumet-db76e",
+    "storage_bucket": "aumet-db76e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813148073098:android:1db6a906884e6f23645173",
+        "android_client_info": {
+          "package_name": "com.example.flutter_bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813148073098-7beurkg0siejjroec0a3ol97sll1nu7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1FQjLMH5tm-dqIfJ4wSD06y7kj4w3cfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813148073098-7beurkg0siejjroec0a3ol97sll1nu7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
