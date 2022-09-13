@@ -31,8 +31,9 @@ class HomeBloc with ChangeNotifier implements BlocLifeCycleInterface {
     userID = await FlutterSecureStorage().read(key: 'usrID') ?? '';
     FavoriteModel json = FavoriteModel(favorite: []);
 
-    listOfUniversities!.clear();
-    listOfFavoriteUniversities!.clear();
+    listOfUniversities?.clear();
+    listOfFavoriteUniversities?.clear();
+    listOfFavoriteUniversities?.clear();
     listOfUniversitiesLenght = 0;
     selectedPages = 0;
     numberOfPages = 0;
@@ -42,13 +43,15 @@ class HomeBloc with ChangeNotifier implements BlocLifeCycleInterface {
       numberOfPages = (listOfUniversities!.length / 15).ceil();
     }
     listOfUniversitiesLenght = listOfUniversities!.length;
-    final value = (await favorites.doc(userID).get()).data() as Map<String, dynamic>;
+    Map<String, dynamic>? value = (await favorites.doc(userID).get()).data() as Map<String, dynamic>?;
+    if (value != null) {
+      json = FavoriteModel.fromJson(value);
 
-    json = FavoriteModel.fromJson(value);
-
-    for (var item in json.favorite!) {
-      listOfFavoriteUniversities!.add(item.name!);
+      for (var item in json.favorite!) {
+        listOfFavoriteUniversities!.add(item.name!);
+      }
     }
+
     notifyListeners();
   }
 

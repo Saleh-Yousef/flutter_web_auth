@@ -43,6 +43,7 @@ class Authentication {
           .user;
       if (user != null) {
         await _profiles.doc(user.uid).set({"userName": userName, 'phoneNumber': phoneNumber});
+        await FlutterSecureStorage().write(key: 'usrID', value: user.uid);
       }
     } on FirebaseAuthException catch (e) {
       await showDialog(
